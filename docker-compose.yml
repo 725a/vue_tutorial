@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/shared
+    working_dir: /shared/blog
+    ports:
+      - '8080:8080'
+    command:
+      yarn serve
