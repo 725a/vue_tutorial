@@ -12,3 +12,12 @@ services:
       - '8080:8080'
     command:
       yarn serve
+  api:
+    build: api
+    volumes:
+      - ./:/shared
+    working_dir: /shared/api
+    ports:
+      - '5000:5000'
+    command:
+      python app.py
